@@ -1,0 +1,15 @@
+MTU（Maximum Transmit Unit，最大传输单元）：物理接口（数据链路层）提供给其上层（通常是IP层）最大一次传输数据的大小
+以太网缺省MTU为1500Byte；IP首部20字节；UDP首部8字节；TCP首部20字节
+UDP Payload = 1500 - 20 - 8 = 1472B
+TCP payload = 1500 - 20 - 20 = 1460B
+
+MSS（Maximum Segment Size，最大报文段长度）：TCP提交给IP层最大分段大小，不包含TCP Header和 TCP Option，只包含TCP Payload ，MSS是TCP用来限制application层最大的发送字节数
+MSS在以太网一般为1500-20-20=1460B
+
+MTU是网络传输最大报文包，MSS是网络传输数据最大值。
+MSS就是你需要发出去的数据大小，MSS加包头数据就等于MTU 。
+MSS就是TCP数据包每次能够传输的最大数据分段。
+
+参考链接：
+https://blog.csdn.net/scarificed/article/details/117262805
+https://www.kawabangga.com/posts/4983
